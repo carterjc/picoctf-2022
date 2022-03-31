@@ -1,0 +1,7 @@
+# substitution1
+
+Once again we are confronted with a substitution cipher (and it won't be the last). We are offered two hints: a suggestion to use a frequency attack and individual words/punctuation. These ideas will be crucial to quickly solve the problem.
+
+I'll use [Dcode's substitution calculator](https://www.dcode.fr/monoalphabetic-substitution) to solve this challenge. First, I'll enter the cipher text from `message.txt`. I'll introduce the concept of crib text. A known-plaintext attack (KPA) is when an attacker has both the ciphertext and the plaintext (or part of it) called a crib. From an observation of `message.txt`, we can see the last line probably contains the words "the flag is: picoCTF". This is an example of a crib which would allow us to easily ascertain the method of encryption and thus decryption. However, the KPA doesn't seem to work on dcode - but frequency analysis works great!
+
+Automatically decoding the ciphertext yields a flag of `PICOCTF{FR3JU3NCY_4774CK5_4R3_C001_E57444AC}`. This is *slighty* off as "PICO" should be lowercase and "FR3**J**U3NCY" attacks make a little bit less sense than "FR3QU3NCY" attacks. So, our final flag is: `picoCTF{FR3QU3NCY_4774CK5_4R3_C001_E57444AC}`.
